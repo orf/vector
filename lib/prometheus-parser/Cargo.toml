@@ -19,3 +19,8 @@ vector-common = { path = "../vector-common", features = ["btreemap"] }
 
 [build-dependencies]
 prost-build = "0.12"
+protobuf-src = {version = "1.0.0", optional = true}
+
+[features]
+default = []
+protobuf-src = ["dep:protobuf-src"]

@@ -741,6 +741,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
+name = "autotools"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef941527c41b0fc0dd48511a8154cd5fc7e29200a0ff8b7203c5d777dbc795cf"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "aws-config"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5123,6 +5132,7 @@ dependencies = [
  "prost 0.12.4",
  "prost-build 0.12.4",
  "prost-types 0.12.4",
+ "protobuf-src",
  "snap",
 ]
 
@@ -6864,6 +6874,7 @@ dependencies = [
  "prost 0.12.4",
  "prost-build 0.12.4",
  "prost-types 0.12.4",
+ "protobuf-src",
  "snafu 0.7.5",
  "vector-common",
 ]
@@ -7018,6 +7029,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3235c33eb02c1f1e212abdbe34c78b264b038fb58ca612664343271e36e55ffe"
 dependencies = [
  "prost 0.12.4",
+]
+
+[[package]]
+name = "protobuf-src"
+version = "1.1.0+21.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c7ac8852baeb3cc6fb83b93646fb93c0ffe5d14bf138c945ceb4b9948ee0e3c1"
+dependencies = [
+ "autotools",
 ]
 
 [[package]]
@@ -10229,6 +10249,7 @@ dependencies = [
  "prost-build 0.12.4",
  "prost-reflect",
  "prost-types 0.12.4",
+ "protobuf-src",
  "pulsar",
  "quickcheck",
  "rand 0.8.5",
@@ -10492,6 +10513,7 @@ dependencies = [
  "prost 0.12.4",
  "prost-build 0.12.4",
  "prost-types 0.12.4",
+ "protobuf-src",
  "quanta 0.12.3",
  "quickcheck",
  "quickcheck_macros",

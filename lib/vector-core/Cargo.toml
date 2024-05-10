@@ -73,6 +73,7 @@ schannel = "0.1.23"
 
 [build-dependencies]
 prost-build = "0.12"
+protobuf-src = {version = "1.0.0", optional = true}
 
 [dev-dependencies]
 base64 = "0.22.1"
@@ -97,6 +98,7 @@ vector-common = { path = "../vector-common", default-features = false, features 
 [features]
 api = ["dep:async-graphql"]
 default = []
+protobuf-src = ["dep:protobuf-src"]
 lua = ["dep:mlua", "dep:tokio-stream", "vrl/lua"]
 vrl = ["dep:enrichment"]
 test = ["vector-common/test", "proptest"]

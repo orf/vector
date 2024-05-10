@@ -1,6 +1,8 @@
 fn main() {
     println!("cargo:rerun-if-changed=proto/prometheus-remote.proto");
     println!("cargo:rerun-if-changed=proto/prometheus-types.proto");
+    #[cfg(feature="protobuf-src")]
+    std::env::set_var("PROTOC", protobuf_src::protoc());
     let mut prost_build = prost_build::Config::new();
     prost_build.btree_map(["."]);
     // It would be nice to just add these derives to all the types, but

@@ -133,6 +133,9 @@ fn main() {
             Path::new(&std::env::var("OUT_DIR").expect("OUT_DIR environment variable not set"))
                 .join("protobuf-fds.bin");
 
+        #[cfg(feature="protobuf-src")]
+        std::env::set_var("PROTOC", protobuf_src::protoc());
+
         let mut prost_build = prost_build::Config::new();
         prost_build
             .btree_map(["."])

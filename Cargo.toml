@@ -361,6 +361,7 @@ nix = { version = "0.26.2", default-features = false, features = ["socket", "sig
 
 [build-dependencies]
 prost-build = { version = "0.12", default-features = false, optional = true }
+protobuf-src = {version = "1.0.0", optional = true}
 tonic-build = { version = "0.10", default-features = false, features = ["transport", "prost"], optional = true }
 # update 'openssl_version' in website/config.toml whenever <major.minor> version changes
 openssl-src = { version = "300", default-features = false, features = ["force-engine", "legacy"] }
@@ -481,6 +482,7 @@ aws-core = [
 
 # Anything that requires Protocol Buffers.
 protobuf-build = ["dep:tonic-build", "dep:prost-build"]
+protobuf-src = ["dep:protobuf-src"]
 
 gcp = ["dep:base64", "dep:goauth", "dep:smpl_jwt"]
 

@@ -4,6 +4,8 @@ fn main() -> Result<()> {
     println!("cargo:rerun-if-changed=proto/gogo.proto");
     println!("cargo:rerun-if-changed=proto/stats.proto");
     println!("cargo:rerun-if-changed=proto/logproto.proto");
+    #[cfg(feature="protobuf-src")]
+    std::env::set_var("PROTOC", protobuf_src::protoc());
     prost_build::compile_protos(
         &[
             "proto/gogo.proto",
